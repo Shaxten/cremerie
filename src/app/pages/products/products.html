@@ -1,12 +1,21 @@
-<app-hero-banner
-  title="Nos Saveurs"
-  subtitle="Explorez notre collection de crèmes glacées artisanales, sorbets et créations véganes."
-  [compact]="true">
-</app-hero-banner>
+<section class="page-hero">
+  <div class="hero-bg">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-label">
+      <span class="label-line"></span>
+      <span class="label-text">Artisanal & Naturel</span>
+    </div>
+    <h1 class="hero-title">Nos Saveurs</h1>
+    <p class="hero-subtitle">Explorez notre collection de crèmes glacées artisanales, sorbets et créations véganes.</p>
+  </div>
+</section>
 
 <section class="products-section">
   <div class="container">
-    <div class="filters reveal">
+    <div class="filters">
       <button
         class="filter-btn"
         [class.active]="selectedCategory === null"
@@ -23,16 +32,14 @@
       }
     </div>
 
-    <div class="products-grid stagger-children">
+    <div class="products-grid">
       @for (product of filteredProducts; track product.id) {
-        <div class="stagger-item">
-          <app-product-card [product]="product"></app-product-card>
-        </div>
+        <app-product-card [product]="product"></app-product-card>
       }
     </div>
 
     @if (filteredProducts.length === 0) {
-      <div class="no-products reveal">
+      <div class="no-products">
         <p>Aucun produit trouvé dans cette catégorie.</p>
       </div>
     }

@@ -1,12 +1,12 @@
 import { Component, inject, AfterViewInit, OnDestroy } from '@angular/core';
-import { HeroBanner } from '../../components/hero-banner/hero-banner';
+import { RouterLink } from '@angular/router';
 import { ProductCard } from '../../components/product-card/product-card';
 import { ProductService } from '../../services/product';
 import { ScrollAnimationService } from '../../services/scroll-animation';
 
 @Component({
   selector: 'app-home',
-  imports: [HeroBanner, ProductCard],
+  imports: [RouterLink, ProductCard],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

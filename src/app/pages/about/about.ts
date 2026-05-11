@@ -1,10 +1,9 @@
 import { Component, inject, AfterViewInit, OnDestroy } from '@angular/core';
-import { HeroBanner } from '../../components/hero-banner/hero-banner';
 import { ScrollAnimationService } from '../../services/scroll-animation';
 
 @Component({
   selector: 'app-about',
-  imports: [HeroBanner],
+  imports: [],
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })

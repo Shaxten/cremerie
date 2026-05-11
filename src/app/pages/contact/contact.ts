@@ -1,11 +1,10 @@
 import { Component, inject, AfterViewInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HeroBanner } from '../../components/hero-banner/hero-banner';
 import { ScrollAnimationService } from '../../services/scroll-animation';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule, HeroBanner],
+  imports: [FormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.scss'
 })

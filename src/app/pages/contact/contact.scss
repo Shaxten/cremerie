@@ -1,3 +1,36 @@
+.page-hero {
+  background: linear-gradient(135deg, #667eea 0%, #e91e63 100%);
+  padding: 10rem 2rem 5rem;
+  text-align: center;
+
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    animation: heroIn 0.7s ease-out both;
+    animation-delay: 0.15s;
+  }
+
+  .hero-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    animation: heroIn 0.7s ease-out both;
+    animation-delay: 0.3s;
+  }
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .section-label {
   display: inline-block;
   font-size: 0.8rem;
