@@ -1,0 +1,24 @@
+<article class="product-card">
+  <a [routerLink]="['/produits', product().id]" class="card-link">
+    <div class="card-image">
+      <div class="image-placeholder" [style.background]="getGradient()">
+        <span class="emoji">{{ getEmoji() }}</span>
+      </div>
+      @if (product().isNew) {
+        <span class="badge badge-new">Nouveau</span>
+      }
+      @if (product().isBestseller) {
+        <span class="badge badge-best">Populaire</span>
+      }
+    </div>
+    <div class="card-content">
+      <span class="category">{{ product().category }}</span>
+      <h3 class="card-title">{{ product().name }}</h3>
+      <p class="card-description">{{ product().description }}</p>
+      <div class="card-footer">
+        <span class="price">{{ product().price | currency:'CAD':'symbol':'1.2-2':'fr' }}</span>
+        <span class="view-link">Découvrir <span>→</span></span>
+      </div>
+    </div>
+  </a>
+</article>

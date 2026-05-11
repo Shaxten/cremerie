@@ -1,0 +1,47 @@
+<section class="hero" [class.compact]="compact()">
+  <!-- Animated background shapes -->
+  <div class="hero-bg" [style.transform]="parallaxTransform">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+  </div>
+
+  <!-- 3D floating element -->
+  <div class="hero-3d-container perspective-container">
+    <div class="floating-element" [style.transform]="transform3D">
+      <div class="ice-cream-3d">
+        <div class="cone"></div>
+        <div class="scoop scoop-1"></div>
+        <div class="scoop scoop-2"></div>
+        <div class="scoop scoop-3"></div>
+        <div class="shine"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-label">
+      <span class="label-line"></span>
+      <span class="label-text">Artisanal & Naturel</span>
+    </div>
+    <h1 class="hero-title">{{ title() }}</h1>
+    <p class="hero-subtitle">{{ subtitle() }}</p>
+    @if (ctaText()) {
+      <a [routerLink]="ctaLink()" class="hero-cta">
+        <span class="cta-text">{{ ctaText() }}</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    }
+  </div>
+
+  <!-- Scroll indicator -->
+  @if (!compact()) {
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  }
+</section>

@@ -1,0 +1,40 @@
+<app-hero-banner
+  title="Nos Saveurs"
+  subtitle="Explorez notre collection de crèmes glacées artisanales, sorbets et créations véganes."
+  [compact]="true">
+</app-hero-banner>
+
+<section class="products-section">
+  <div class="container">
+    <div class="filters reveal">
+      <button
+        class="filter-btn"
+        [class.active]="selectedCategory === null"
+        (click)="filterByCategory(null)">
+        Toutes
+      </button>
+      @for (category of categories; track category) {
+        <button
+          class="filter-btn"
+          [class.active]="selectedCategory === category"
+          (click)="filterByCategory(category)">
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <div class="products-grid stagger-children">
+      @for (product of filteredProducts; track product.id) {
+        <div class="stagger-item">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      }
+    </div>
+
+    @if (filteredProducts.length === 0) {
+      <div class="no-products reveal">
+        <p>Aucun produit trouvé dans cette catégorie.</p>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,55 @@
+.products-section {
+  padding: 5rem 0;
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.filter-btn {
+  padding: 0.7rem 1.8rem;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  background: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  transition: all 0.3s var(--transition-smooth);
+
+  &:hover {
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 8px 25px rgba(26, 10, 46, 0.2);
+  }
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.no-products {
+  text-align: center;
+  padding: 4rem;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}

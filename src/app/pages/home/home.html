@@ -1,0 +1,114 @@
+<app-hero-banner
+  title="L'Art de la Crème Glacée"
+  subtitle="Des saveurs d'exception, des ingrédients nobles et un savoir-faire artisanal transmis avec passion depuis 2020."
+  ctaText="Explorer nos créations"
+  ctaLink="/produits">
+</app-hero-banner>
+
+<!-- Bestsellers Section -->
+<section class="section section-bestsellers">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Les Incontournables</span>
+      <h2 class="section-title">Nos Meilleures Ventes</h2>
+      <p class="section-description">Les saveurs plébiscitées par nos clients, celles qui font revenir encore et encore.</p>
+    </div>
+    <div class="products-grid stagger-children">
+      @for (product of bestsellers; track product.id) {
+        <div class="stagger-item">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section section-features">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Notre Engagement</span>
+      <h2 class="section-title">Pourquoi Glacée ?</h2>
+    </div>
+    <div class="features-grid stagger-children">
+      <div class="feature-card stagger-item">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">🌿</div>
+        </div>
+        <h3>100% Naturel</h3>
+        <p>Aucun colorant artificiel, aucun conservateur. Uniquement des ingrédients frais et naturels sélectionnés avec soin.</p>
+      </div>
+      <div class="feature-card stagger-item">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">👨‍🍳</div>
+        </div>
+        <h3>Savoir-Faire Artisanal</h3>
+        <p>Chaque saveur est élaborée et préparée à la main par nos maîtres glaciers formés en Italie.</p>
+      </div>
+      <div class="feature-card stagger-item">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">🌍</div>
+        </div>
+        <h3>Éco-Responsable</h3>
+        <p>Emballages recyclables, approvisionnement local et engagement concret pour un avenir durable.</p>
+      </div>
+      <div class="feature-card stagger-item">
+        <div class="feature-icon-wrapper">
+          <div class="feature-icon">🏆</div>
+        </div>
+        <h3>Primé & Reconnu</h3>
+        <p>Lauréat du prix de la meilleure crème glacée artisanale du Québec en 2024.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Parallax Quote Section -->
+<section class="section section-quote">
+  <div class="quote-bg"></div>
+  <div class="container">
+    <blockquote class="quote reveal-scale">
+      <p>« La crème glacée est le sourire de la gastronomie. »</p>
+      <cite>— Marie-Claire Dubois, Fondatrice</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- New Products Section -->
+<section class="section section-new">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Fraîchement Créées</span>
+      <h2 class="section-title">Nos Nouveautés</h2>
+      <p class="section-description">Découvrez nos dernières inspirations, des saveurs audacieuses qui repoussent les limites.</p>
+    </div>
+    <div class="products-grid stagger-children">
+      @for (product of newProducts; track product.id) {
+        <div class="stagger-item">
+          <app-product-card [product]="product"></app-product-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section section-cta reveal-scale">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>Envie de Découvrir Toutes Nos Saveurs ?</h2>
+        <p>Explorez notre collection complète de crèmes glacées artisanales, sorbets et créations véganes.</p>
+        <a routerLink="/produits" class="cta-button">
+          <span>Voir la collection</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="cta-decoration">
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+        <div class="deco-circle"></div>
+      </div>
+    </div>
+  </div>
+</section>

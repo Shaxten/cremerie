@@ -1,0 +1,57 @@
+@if (product) {
+  <section class="product-detail">
+    <div class="container">
+      <a routerLink="/produits" class="back-link">
+        <span class="back-arrow">←</span>
+        <span>Retour aux saveurs</span>
+      </a>
+
+      <div class="detail-grid">
+        <div class="detail-image reveal-left">
+          <div class="image-wrapper perspective-container">
+            <div class="image-card" [style.background]="getGradient()">
+              <span class="emoji">{{ getEmoji() }}</span>
+              <div class="image-shine"></div>
+            </div>
+          </div>
+          @if (product.isNew) {
+            <span class="badge badge-new">Nouveau</span>
+          }
+          @if (product.isBestseller) {
+            <span class="badge badge-best">Populaire</span>
+          }
+        </div>
+
+        <div class="detail-info reveal-right">
+          <span class="category">{{ product.category }}</span>
+          <h1 class="product-name">{{ product.name }}</h1>
+          <p class="product-description">{{ product.description }}</p>
+
+          <div class="price-section">
+            <span class="price">{{ product.price | currency:'CAD':'symbol':'1.2-2':'fr' }}</span>
+            <span class="price-unit">/ pot de 500ml</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="ingredients">
+            <h3>Ingrédients</h3>
+            <ul>
+              @for (ingredient of product.ingredients; track ingredient) {
+                <li>{{ ingredient }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="not-found">
+    <div class="container">
+      <h2>Produit non trouvé</h2>
+      <p>Ce produit n'existe pas ou a été retiré.</p>
+      <a routerLink="/produits" class="back-link">← Retour aux saveurs</a>
+    </div>
+  </section>
+}

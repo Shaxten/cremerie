@@ -1,0 +1,231 @@
+.product-detail {
+  padding: 10rem 0 5rem;
+  min-height: 100vh;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  transition: color 0.3s, gap 0.3s;
+
+  &:hover {
+    color: var(--color-secondary);
+    gap: 0.8rem;
+  }
+
+  .back-arrow {
+    font-size: 1.2rem;
+  }
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.detail-image {
+  position: relative;
+
+  .image-wrapper {
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .image-card {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 24px;
+    transition: transform 0.5s var(--transition-smooth);
+
+    &:hover {
+      transform: rotateY(5deg) rotateX(3deg) scale(1.02);
+    }
+
+    .emoji {
+      font-size: 10rem;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+      animation: floatEmoji 4s ease-in-out infinite;
+    }
+
+    .image-shine {
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 60%
+      );
+      animation: shine 4s ease-in-out infinite;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    &-new {
+      background: rgba(76, 175, 80, 0.9);
+      color: white;
+    }
+
+    &-best {
+      background: rgba(212, 175, 55, 0.9);
+      color: white;
+    }
+  }
+}
+
+.detail-info {
+  padding-top: 1rem;
+
+  .category {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .product-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-primary);
+    margin: 0.8rem 0 1.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .product-description {
+    font-size: 1.1rem;
+    color: var(--color-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+}
+
+.price-section {
+  margin-bottom: 2rem;
+
+  .price {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+  }
+
+  .price-unit {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-left: 0.5rem;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+  margin: 2rem 0;
+}
+
+.ingredients {
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+
+    li {
+      background: var(--color-cream);
+      padding: 0.5rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: var(--color-muted);
+      font-weight: 500;
+      transition: all 0.3s;
+
+      &:hover {
+        background: var(--color-primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+.not-found {
+  padding: 10rem 0;
+  text-align: center;
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  p {
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+  }
+}
+
+@keyframes floatEmoji {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes shine {
+  0%, 100% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
