@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npx ng build --base-href /cr-merie/
+        run: npx ng build --base-href /cremerie/
 
       - name: Add 404.html for SPA routing
         run: cp ./dist/glacee-shop/browser/index.html ./dist/glacee-shop/browser/404.html
